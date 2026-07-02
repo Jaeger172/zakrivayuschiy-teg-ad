@@ -202,11 +202,20 @@
 
 .save-button {
   width: clamp(306px, 295.79px + 2.72vw, 335px);
-  height: 51px;
-  padding: 15px 0;
+  height: 55px;
   margin: 0 auto 100px;
   display: block;
   background-color: #fff;
+}
+
+.button-content {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.save-button .button__text {
+  display: inline;
 }
 
 .save-button:focus {
@@ -217,7 +226,14 @@
 
 .floppy-icon {
   margin-right: 8px;
+  margin-top: 15px;
   transform: translate(39, 39);
+  background-color: white;
+  mix-blend-mode: multiply;
+}
+
+.save-button:hover .floppy-icon {
+  mix-blend-mode: difference;
 }
 
 .dialog[open] {
@@ -271,6 +287,7 @@
   transform: scale(calc(39/21));
 }
 
+
 @supports((text-stroke: 1px var(--watermark-stroke)) or (-webkit-text-stroke: 1px var(--watermark-stroke))) {
   .watermark {
     -webkit-text-stroke: 1px var(--watermark-stroke);
@@ -292,10 +309,11 @@
     display: block;
   }
   .save-button {
-    height: 80px;
+    height: 84px;
   }
   .floppy-icon {
     margin-bottom: 8px;
+    margin-top: 15px;
   }
   .dialog[open] {
     min-width: 341px;
