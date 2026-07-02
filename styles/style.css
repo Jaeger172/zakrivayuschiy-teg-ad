@@ -92,87 +92,51 @@
   outline: solid 2px #000;
 }
 
-.main-body, .core {
-  fill: var(--heart-core);
-}
-
-.main-body {
-  transition: fill 0.3s;
-}
-
-.core {
-  transition: fill 0.3s 0.03s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.card__icon-button:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s 0.05s;
-}
-
-.card__icon-button:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s;
-}
-
-.card__icon-button:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s;
-}
-
-.card__icon-button:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .main-body{
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s;
-}
-
-.like-icon.is-liked .contour{
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.06s;
-}
-
-.like-icon .contour{
-  fill: var(--contour-color);
-  transition: fill 0.1s;
-}
-
-@keyframes resize {
-  to {
-    transfrom: scale(1.25);
-  }
-}
-
-@keyframes showSparks {
-  to {
-    opacity: 1;
-  }
-}
-
-.like-icon.is-liked .heart {
-  animation: resize 0.3s ease-in 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: showSparks 0.3s ease-in 0.3s;
-}
-
 .card__like-button {
   outline: solid 1px #000;
   background-color: transparent;
   width: 130px;
   height: 38px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__like-button::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  transform: translate(-100%);
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+}
+
+.card__like-button:hover::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translate(0);
+}
+
+.card__like-button:hover .button__text {
+  mix-blend-mode: difference;
+}
+
+.button__text {
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  line-height: 0.9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .card__like-button:focus {
@@ -234,12 +198,6 @@
   0 1px var(--watermark-stroke), 
   1px 0 var(--watermark-stroke), 
   0 -1px var(--watermark-stroke);
-}
-
-.button__text {
-  font-family: var(--accent-font-family);
-  font-size: 14px;
-  line-height: 0.9;
 }
 
 .save-button {
