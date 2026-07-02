@@ -206,12 +206,15 @@
   margin: 0 auto 100px;
   display: block;
   background-color: #fff;
+  position: relative;
+  padding: 0;
 }
 
 .button-content {
   display: inline-block;
   width: 100%;
   height: 100%;
+  pointer-events: all;
 }
 
 .save-button .button__text {
@@ -222,6 +225,26 @@
   outline: none;
   box-shadow: 2px 2px #000;
   transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.save-button::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  transform: translate(-100%);
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+}
+
+.save-button:hover::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translate(0);
 }
 
 .floppy-icon {
