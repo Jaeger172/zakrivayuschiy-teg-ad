@@ -5,4 +5,7 @@
     --text-weight: 400;
     --header-weight: 785;
     --watermark-stroke: rgb(255 255 255 / 0.5);
+    --contour-color: black;
+    --animation-fill-color: #ff0000;
+    --heart-core: white;
 }

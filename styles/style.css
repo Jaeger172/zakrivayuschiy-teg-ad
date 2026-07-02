@@ -236,6 +236,14 @@
   transform: scale(calc(39/21));
 }
 
+.main-body, .core {
+  fill: none;
+}
+
+.sparks {
+  opacity: 0;
+}
+
 @supports((text-stroke: 1px var(--watermark-stroke)) or (-webkit-text-stroke: 1px var(--watermark-stroke))) {
   .watermark {
     -webkit-text-stroke: 1px var(--watermark-stroke);
