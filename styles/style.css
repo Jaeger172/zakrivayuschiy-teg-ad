@@ -208,6 +208,7 @@
   background-color: #fff;
   position: relative;
   padding: 0;
+  overflow: hidden;
 }
 
 .button-content {
@@ -225,7 +226,6 @@
   outline: none;
   box-shadow: 2px 2px #000;
   transition: box-shadow 0.3s ease;
-  overflow: hidden;
 }
 
 .save-button::before {
@@ -292,12 +292,44 @@
   height: 38px;
   display: block;
   grid-area: button;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.dialog__button-text {
+  color: #fff;
+  mix-blend-mode: difference;
+  width: 100%;
+  height: 100%;
+  padding-top: 12.5px;
+  display: inline-block;
+
 }
 
 .dialog-button:focus {
   outline: none;
   box-shadow: 2px 2px #000;
   transition: box-shadow 0.3s ease;
+}
+
+.dialog-button::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+}
+
+.dialog-button:hover::before {
+  content: "";
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(1);
 }
 
 .dialog__floppy-icon {
