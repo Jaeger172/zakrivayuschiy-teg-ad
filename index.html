@@ -381,7 +381,7 @@
           <button type="button" class="card__like-button"><span class="button__text">Like</span></button>
         </div>
       </article>
-      <button class="save-button" type="button" onclick="window['dialog-id'].showModal()" aria-controls="dialog-id">
+      <button class="save-button" type="button" onclick="(function(e){ e.preventDefault(); window['dialog-id'].showModal(); })(event)" aria-controls="dialog-id">
         <span class="button-content">
           <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" class="floppy-icon">
             <use href="#floppy"/>
@@ -396,7 +396,7 @@
       </svg>
       <h2 class="button__text dialog__text">Вставьте дискету, чтобы продолжить</h2>
       <button type="button" class="dialog-button"
-          onclick="window['dialog-id'].close()"><span class="dialog__button-text">OK</span>
+          onclick="(function(e){ e.preventDefault(); window['dialog-id'].close(); })(event)"><span class="dialog__button-text">OK</span>
       </button>
     </dialog>
     <script src="./scripts/like.js"></script>
