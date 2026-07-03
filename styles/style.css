@@ -359,15 +359,11 @@
     width: 100%;
   }
   .floppy-icon {
-    margin: 0 auto;
+    margin: 15px auto 8px;
     display: block;
   }
   .save-button {
     height: 84px;
-  }
-  .floppy-icon {
-    margin-bottom: 8px;
-    margin-top: 15px;
   }
   .dialog[open] {
     min-width: 341px;
