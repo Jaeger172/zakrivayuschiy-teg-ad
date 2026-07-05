@@ -17,13 +17,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '24'  # Обновляем до актуальной версии
+          node-version: '24'  # Обеспечиваем запуск в Node.js 24
 
       - name: Check if the repository is private
         run: exit 1
-        if: ${{github.event.repository.private}}
+        if: ${{ github.event.repository.private }}
 
-      - name: Tests
+      - name: Run tests
         uses: Yandex-Practicum/test-project-action@v1
         with:
           project: 'zakrivayuschiy-teg-ad'
