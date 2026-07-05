@@ -8,4 +8,7 @@
     --contour-color: black;
     --animation-fill-color: #ff0000;
     --heart-core: white;
+    --background-net: #d3d3d3;
+    --background-gradient-from: #e7e7e7;
+    --background-gradient-to: #1a1a1a;
 }

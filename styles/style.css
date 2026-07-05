@@ -14,9 +14,9 @@
   min-block-size: 100dvb;
   font-family: var(--main-font-family), sans-serif;
   font-variation-settings: 'wght' var(--text-weight);
-  background-image: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
-  repeating-linear-gradient(to top, #d3d3d3 0 2px, transparent 2px 4px),
-  linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  background-image: repeating-linear-gradient(to right, var(--background-net) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to top, var(--background-net) 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, var(--background-gradient-from), var(--background-gradient-to));
 }
 
 .header {
@@ -28,7 +28,7 @@
 }
 
 .heading {
-  background-color: #fff;
+  background-color: var(--heart-core);
   width: min(100%, clamp(375px, 261.97px + 30.14vw, 696px));
   height: clamp(368px, 377.46px + -0.66vw, 375px);
   display: flex;
@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  border: solid 2px #000;
+  border: solid 2px var(--contour-color);
   text-transform: uppercase;
 }
 
@@ -51,8 +51,8 @@
 .card {
   width: clamp(375px, 261.97px + 30.14vw, 696px);
   margin: 0 auto 50px;
-  background-color: #fff;
-  border: solid 2px #000;
+  background-color: var(--heart-core);
+  border: solid 2px var(--contour-color);
   font-size: 18px;
   display: flex;
   flex-direction: column;
@@ -89,11 +89,11 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: solid 2px #000;
+  outline: solid 2px var(--contour-color);
 }
 
 .card__like-button {
-  outline: solid 1px #000;
+  outline: solid 1px var(--contour-color);
   background-color: transparent;
   width: 130px;
   height: 38px;
@@ -104,7 +104,7 @@
 
 .card__like-button::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   transform: translate(-100%);
@@ -114,7 +114,7 @@
 
 .card__like-button:hover::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   display: block;
@@ -123,6 +123,12 @@
 
 .card__like-button:hover .button__text {
   mix-blend-mode: difference;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--contour-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -135,21 +141,15 @@
   width: 100%;
   height: 100%;
   position: relative;
-  color: white;
+  color: var(--heart-core);
   mix-blend-mode: difference;
-}
-
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px #000;
-  transition: box-shadow 0.3s ease;
 }
 
 .card-image {
   position: relative;
   overflow: hidden;
-  border-bottom: solid 2px #000;
-  border-top: solid 2px #000;
+  border-bottom: solid 2px var(--contour-color);
+  border-top: solid 2px var(--contour-color);
   aspect-ratio: 1;
 }
 
@@ -194,10 +194,10 @@
   font-family: var(--accent-font-family);
   mix-blend-mode: hard-light;
   text-shadow:
-  -1px 0 var(--watermark-stroke), 
-  0 1px var(--watermark-stroke), 
-  1px 0 var(--watermark-stroke), 
-  0 -1px var(--watermark-stroke);
+    -1px 0 var(--watermark-stroke), 
+    0 1px var(--watermark-stroke), 
+    1px 0 var(--watermark-stroke), 
+    0 -1px var(--watermark-stroke);
 }
 
 .save-button {
@@ -205,7 +205,7 @@
   height: 55px;
   margin: 0 auto 100px;
   display: block;
-  background-color: #fff;
+  background-color: var(--heart-core);
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -224,13 +224,13 @@
 
 .save-button:focus {
   outline: none;
-  box-shadow: 2px 2px #000;
+  box-shadow: 2px 2px var(--contour-color);
   transition: box-shadow 0.3s ease;
 }
 
 .save-button::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   transform: scaleX(0);
@@ -241,7 +241,7 @@
 
 .save-button:hover::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   display: block;
@@ -252,7 +252,7 @@
   margin-right: 8px;
   margin-top: 15px;
   transform: translate(39, 39);
-  background-color: white;
+  background-color: var(--heart-core);
   mix-blend-mode: multiply;
 }
 
@@ -298,7 +298,7 @@
 }
 
 .dialog__button-text {
-  color: #fff;
+  color: var(--heart-core);
   mix-blend-mode: difference;
   width: 100%;
   height: 100%;
@@ -308,13 +308,13 @@
 
 .dialog-button:focus {
   outline: none;
-  box-shadow: 2px 2px #000;
+  box-shadow: 2px 2px var(--contour-color);
   transition: box-shadow 0.3s ease;
 }
 
 .dialog-button::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   transform: scaleX(0);
@@ -325,7 +325,7 @@
 
 .dialog-button:hover::before {
   content: "";
-  background-color: #000;
+  background-color: var(--contour-color);
   width: 100%;
   height: 100%;
   transform: scaleX(1);
