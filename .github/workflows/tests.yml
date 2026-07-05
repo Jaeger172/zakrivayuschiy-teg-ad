@@ -13,9 +13,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24'  # Обновляем до актуальной версии
+
       - name: Check if the repository is private
         run: exit 1
         if: ${{github.event.repository.private}}
+
       - name: Tests
         uses: Yandex-Practicum/test-project-action@v1
         with:
