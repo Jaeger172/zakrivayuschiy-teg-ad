@@ -1,14 +1,1 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
-:root {
-    --main-font-family: 'Inter-Variable';
-    --accent-font-family: 'PressStar2P';
-    --text-weight: 400;
-    --header-weight: 785;
-    --watermark-stroke: rgb(255 255 255 / 0.5);
-    --contour-color: black;
-    --animation-fill-color: #ff0000;
-    --heart-core: white;
-    --background-net: #d3d3d3;
-    --background-gradient-from: #e7e7e7;
-    --background-gradient-to: #1a1a1a;
-}

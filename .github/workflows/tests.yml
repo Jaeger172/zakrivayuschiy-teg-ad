@@ -13,17 +13,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '24'  # Обеспечиваем запуск в Node.js 24
-
       - name: Check if the repository is private
         run: exit 1
-        if: ${{ github.event.repository.private }}
-
-      - name: Run tests
+        if: ${{github.event.repository.private}}
+      - name: Tests
         uses: Yandex-Practicum/test-project-action@v1
         with:
           project: 'zakrivayuschiy-teg-ad'
